@@ -1,0 +1,25 @@
+#+TITLE: UB CSE Emacs Configuration
+#+author: Ethan Blanton <eblanton@buffalo.edu>
+
+This repository contains an Emacs configuration that is intended to
+provide a better experience for Emacs beginners.  It installs some
+packages from GNU ELPA and MELPA, sets up "better" (your opinion may
+vary, of course) defaults for certain things, enables Modus themes,
+and generally tries to make Emacs look a little bit more like
+something that someone with little or no Unix or Emacs experience
+would expect to see – but without changing anything essential about
+Emacs.  It won't set up CUA keybindings, install a large configuration
+framework, etc.
+
+Some of the configuration found here is to deal with specifics of the
+environment encountered by Computer Science and Engineering students
+at the University at Buffalo, and with the expectations laid on UB CSE
+students, but none of it should impact other Emacs users in any
+significant way.  For example, the default C/C++/Java indentation
+style will be changed to a unified UB CSE style.  Other accommodations
+are likely to be useful in many University-like environments, such as
+configuration to deal with wildly different Emacs versions on
+different hosts mounting the same home directory.
+
+Enjoy!
+— Ethan
