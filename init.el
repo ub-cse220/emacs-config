@@ -308,8 +308,14 @@
 
 ;; For modes that are strongly line-oriented and likely to have
 ;; repeating hits on the same line, swiper is more graceful than
-;; swiper-isearch.
-(define-key dired-mode-map (kbd "C-s") #'swiper)
+;; swiper-isearch.  As an example, dired (the Emacs file management
+;; mode).  Note that, as above, some CSE systems do not have
+;; with-eval-after-load, so we use eval-after-load.  Postponing
+;; evaluation prevents an error that dired-mode-map does not exist, if
+;; dired has not yet been loaded.
+(eval-after-load "dired.el"
+  (lambda ()
+    (define-key dired-mode-map (kbd "C-s") #'swiper)))
 
 ;; The Emacs default binding of C-z to `suspend-frame' is surprising,
 ;; particularly for users who expect C-z to be undo.  Provide a
