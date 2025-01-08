@@ -62,7 +62,8 @@
 ;; fake it out.  This add-to-list basically says "I support SVG!", but
 ;; then later SVG loads will fail.  This might have other undesirable
 ;; side effects.
-(when (not (memq 'svg image-types))
+(when (and (boundp 'image-types)
+           (not (memq 'svg image-types)))
   (add-to-list 'image-types 'svg))
 
 ;;; Set up package management
