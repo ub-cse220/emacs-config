@@ -105,7 +105,8 @@
 
 ;; This doesn't normally have to be so complicated.
 
-(dolist (pkg '(company eglot swiper vertico vertico-posframe treemacs marginalia))
+(dolist (pkg '(company eglot swiper vertico vertico-posframe treemacs
+                       marginalia which-key))
   (condition-case ()
       (unless (package-installed-p pkg)
 	(package-install pkg))
@@ -242,6 +243,14 @@
 ;; to know, and you won't even have to select it.
 (when (require 'marginalia nil t)
   (marginalia-mode))
+
+;; Which-key provides preemptive assistance when the user presses the
+;; beginning of a multi-key sequence and then pauses; for example, if
+;; you press C-x but don't press the next key, which-key will pop up a
+;; table of possible next keys with the commands to which they are
+;; bound at the bottom of the screen.
+(when (require 'which-key nil t)
+  (which-key-mode))
 
 ;;; Default indentation style
 
